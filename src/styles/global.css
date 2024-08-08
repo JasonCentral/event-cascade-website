@@ -2,6 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  :root {
+    --color-background: 5 7 26;
+    --color-primary: 255 255 255;
+    --color-secondary: 158 163 191;
+    --color-accent: 249 145 59;
+  }
+}
+
 body {
-    font-family: "Sora", sans-serif;
+  font-family: "Sora", sans-serif;
 }
