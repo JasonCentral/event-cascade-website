@@ -1,0 +1,32 @@
+---
+import Logo from "./Logo.astro";
+import { Image } from "astro:assets";
+import hamburgerMenu from "../icons/hamburger-menu.svg";
+---
+
+<header class="w-full h-24 flex flex-row items-center px-2">
+  <div class="flex flex-row gap-3 items-center basis-full">
+    <Logo />
+    <h1 class="font-bold text-lg">Event Cascade</h1>
+  </div>
+
+  <nav class="hidden md:block">
+    <ul class="flex flex-row gap-4">
+      <li>Features</li>
+      <li>Pricing</li>
+      <li>Reviews</li>
+    </ul>
+  </nav>
+
+  <div class="flex flex-row justify-end basis-full">
+    <button class="md:block hidden">Try for Free</button>
+
+    <Image
+      class="md:hidden cursor-pointer"
+      src={hamburgerMenu}
+      alt="Hamburger Menu"
+      height={32}
+      width={32}
+    />
+  </div>
+</header>
