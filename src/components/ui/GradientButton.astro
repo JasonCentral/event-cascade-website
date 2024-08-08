@@ -1,0 +1,49 @@
+---
+interface Props {
+  class: string;
+  borderRadius?: string;
+}
+
+const { class: className, borderRadius = "0.75rem" } = Astro.props;
+---
+
+<button class:list={["p-3", className]}>
+  <slot />
+</button>
+
+<style define:vars={{ borderRadius }}>
+  button {
+    position: relative;
+    --gradient-from: #131a37;
+    --gradient-to: #090c24;
+
+    background-image: linear-gradient(
+      to right,
+      var(--gradient-from),
+      var(--gradient-to)
+    );
+
+    border-radius: var(--borderRadius);
+  }
+
+  button::before {
+    content: "";
+    --gradient-from-border: #191e37;
+    --gradient-to-border: #14172d;
+
+    display: block;
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+
+    background-image: linear-gradient(
+      to right,
+      var(--gradient-from-border),
+      var(--gradient-to-border)
+    );
+    border-radius: var(--borderRadius);
+    z-index: -1;
+  }
+</style>

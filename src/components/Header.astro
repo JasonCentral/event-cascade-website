@@ -1,28 +1,29 @@
 ---
 import Logo from "./Logo.astro";
+import GradientButton from "./ui/GradientButton.astro";
 import { Image } from "astro:assets";
 import hamburgerMenu from "../icons/hamburger-menu.svg";
 ---
 
-<header class="w-full h-24 flex flex-row items-center px-2">
-  <div class="flex flex-row gap-3 items-center basis-full">
+<header class="flex h-24 w-full flex-row items-center px-7 lg:px-2">
+  <div class="flex basis-full flex-row items-center gap-3">
     <Logo />
-    <h1 class="font-bold text-lg">Event Cascade</h1>
+    <h1 class="text-lg font-bold">Event Cascade</h1>
   </div>
 
   <nav class="hidden md:block">
-    <ul class="flex flex-row gap-4">
-      <li>Features</li>
-      <li>Pricing</li>
-      <li>Reviews</li>
+    <ul class="flex flex-row gap-4 text-secondary">
+      <li><a href="#features">Features</a></li>
+      <li><a href="#pricing">Pricing</a></li>
+      <li><a href="#reviews">Reviews</a></li>
     </ul>
   </nav>
 
-  <div class="flex flex-row justify-end basis-full">
-    <button class="md:block hidden">Try for Free</button>
+  <div class="flex basis-full flex-row justify-end">
+    <GradientButton class="hidden md:block">Try for Free</GradientButton>
 
     <Image
-      class="md:hidden cursor-pointer"
+      class="cursor-pointer md:hidden"
       src={hamburgerMenu}
       alt="Hamburger Menu"
       height={32}
