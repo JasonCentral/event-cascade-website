@@ -1,3 +1,11 @@
-<button class="rounded-xl bg-accent p-3">
+---
+interface Props {
+  class: string;
+}
+
+const { class: className } = Astro.props;
+---
+
+<button class:list={["rounded-xl bg-accent p-3", className]}>
   <slot />
 </button>
