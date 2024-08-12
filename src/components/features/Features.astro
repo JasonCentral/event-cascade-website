@@ -4,8 +4,19 @@ import FeatureCard from "~/components/features/FeatureCard.astro";
 import features from "~/data/features.json";
 ---
 
-<section>
-  <div class="flex w-full flex-col gap-8">
+<section
+  id="features"
+  class="flex w-full flex-col 2xl:flex-row 2xl:items-center"
+>
+  <div class="mb-10 text-center 2xl:max-w-96 2xl:text-left">
+    <h2 class="text-3xl">Explore Our Services</h2>
+    <p class="text-secondary">
+      Crafting Unforgettable Moments with Precision, Passion, and a Personal
+      Touch.
+    </p>
+  </div>
+
+  <div class="features-grid">
     {
       features.map((data) => (
         <FeatureCard feature={data.feature} description={data.description} />
@@ -13,3 +24,24 @@ import features from "~/data/features.json";
     }
   </div>
 </section>
+
+<style>
+  .features-grid {
+    display: grid;
+    gap: 2rem;
+    margin: 0 auto;
+  }
+
+  @media only screen and (min-width: 992px) {
+    .features-grid {
+      grid-template-columns: fit-content(50%) fit-content(50%);
+    }
+  }
+
+  @media only screen and (min-width: 1536px) {
+    .features-grid {
+      width: 100%;
+      grid-template-columns: repeat(auto-fill, 28rem);
+    }
+  }
+</style>
