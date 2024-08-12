@@ -1,0 +1,25 @@
+---
+import featureIcon from "~/icons/feature-icon.svg";
+import { Image } from "astro:assets";
+---
+
+<div class="container mx-auto flex h-16 w-16 items-center justify-center">
+  <Image src={featureIcon} alt="Hamburger Menu" class="h-[80%] w-[80%]" />
+</div>
+
+<style>
+  .container {
+    position: relative;
+  }
+
+  .container::before {
+    content: "";
+    display: block;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: theme(colors.background.light);
+    z-index: -1;
+    border-radius: 50%;
+  }
+</style>

@@ -1,0 +1,15 @@
+---
+import FeatureCard from "~/components/features/FeatureCard.astro";
+
+import features from "~/data/features.json";
+---
+
+<section>
+  <div class="flex w-full flex-col gap-8">
+    {
+      features.map((data) => (
+        <FeatureCard feature={data.feature} description={data.description} />
+      ))
+    }
+  </div>
+</section>

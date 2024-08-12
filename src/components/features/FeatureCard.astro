@@ -1,0 +1,19 @@
+---
+import FeatureIcon from "~/components/features/FeatureIcon.astro";
+import Card from "../ui/Card.astro";
+
+interface Props {
+  feature: string;
+  description: string;
+}
+
+const { feature, description } = Astro.props;
+---
+
+<Card
+  class="mx-auto flex h-64 max-w-md flex-col justify-around gap-3 rounded-2xl p-8 text-center"
+>
+  <FeatureIcon />
+  <h3 class="text-2xl">{feature}</h3>
+  <p class="text-secondary">{description}</p>
+</Card>
