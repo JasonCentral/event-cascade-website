@@ -16,6 +16,13 @@ export default {
     boxShadow: {
       inset: "inset 0px 0px 80px 0px theme(colors.background.highlight)",
     },
+    screens: {
+      "2sm": "450px",
+      sm: "640px",
+      md: "768px",
+      lg: "1024px",
+      xl: "1280px",
+    },
   },
   plugins: [],
 };

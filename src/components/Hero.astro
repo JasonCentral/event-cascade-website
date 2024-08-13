@@ -9,7 +9,7 @@ import heroImage from "/public/event-hero-image.jpg";
 <div
   class="hero-container sm:max relative box-border flex flex-col items-center gap-3 pb-10 sm:mx-auto sm:max-w-xl md:max-w-3xl md:py-10 lg:max-w-4xl"
 >
-  <h2 class="px-7 text-center text-4xl sm:text-5xl md:text-6xl">
+  <h2 class="px-7 text-center text-3xl sm:text-4xl md:text-6xl">
     Effortless Event Management That Flows
   </h2>
 
@@ -32,7 +32,9 @@ import heroImage from "/public/event-hero-image.jpg";
 <style>
   .hero-container {
     --header-height: 6rem;
+    --max-hero-height: 900px;
     height: calc(100vh - var(--header-height));
-    min-height: calc(900px - var(--header-height));
+    min-height: calc(var(--max-hero-height) - var(--header-height));
+    overflow: hidden;
   }
 </style>
