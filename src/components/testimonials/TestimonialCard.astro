@@ -12,32 +12,48 @@ const { name, title, quote } = Astro.props;
 
 <Card
   data-testimonial-card
-  class="shadow-none hidden h-64 w-72 flex-col justify-between overflow-clip rounded-none bg-background-light p-5 text-center transition-all"
+  class="shadow-none transition-slides hidden h-64 w-72 flex-col justify-between overflow-clip rounded-none bg-background-light p-5 text-center"
 >
   <p class="text-secondary">"{quote}"</p>
   <p class="mt-4"><span class="text-xl text-accent">{name}</span> {title}</p>
 </Card>
 
 <style>
+  .transition-slides {
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 500ms;
+  }
+
   .active {
     display: flex;
   }
 
+  .adj {
+    display: flex;
+    position: absolute;
+    top: 0;
+    opacity: 0%;
+    z-index: -1;
+  }
+
+  .adj-left {
+    translate: -100%;
+  }
+
+  .adj-right {
+    translate: 100%;
+  }
+
   @media only screen and (min-width: 1024px) {
     .adj {
-      display: flex;
-      position: absolute;
-      top: 0;
+      opacity: 100%;
       scale: 50%;
       filter: blur(2px);
     }
 
-    .adj-left {
-      translate: -100%;
-    }
-
-    .adj-right {
-      translate: 100%;
+    .transition-slides {
+      transition-duration: 200ms;
     }
   }
 </style>
