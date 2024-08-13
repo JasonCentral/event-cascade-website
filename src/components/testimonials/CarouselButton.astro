@@ -1,0 +1,28 @@
+---
+import { Image } from "astro:assets";
+
+import doubleLeft from "~/icons/left-arrow.svg";
+
+interface Props {
+  type: "left" | "right";
+  class?: string;
+}
+
+const { type, class: className, ...props } = Astro.props;
+const rotationClass = type === "right" ? "scale-[-1] translate-x-[7%]" : "";
+const altDescriptor = `${type === "left" ? "last" : "next"} testimonial button`;
+---
+
+<button
+  class:list={[className]}
+  data-carousel-button
+  data-button-type={type}
+  {...props}
+>
+  <Image
+    class:list={["translate-x-[-10%]", rotationClass]}
+    src={doubleLeft}
+    alt={altDescriptor}
+    {...props}
+  />
+</button>

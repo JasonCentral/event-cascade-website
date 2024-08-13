@@ -1,12 +1,13 @@
 ---
-import OutlinedImage from "./ui/OutlinedImage.astro";
-import Button from "./ui/Button.astro";
+import OutlinedImage from "~/components/ui/OutlinedImage.astro";
+import Testimonials from "~/components/testimonials/Testimonials.astro";
+import Button from "~/components/ui/Button.astro";
 
-import heroImage from "../../public/event-hero-image.jpg";
+import heroImage from "/public/event-hero-image.jpg";
 ---
 
 <div
-  class="hero-container sm:max box-border flex flex-col items-center gap-3 py-10 pb-10 sm:mx-auto sm:max-w-xl md:max-w-3xl lg:max-w-4xl"
+  class="hero-container sm:max relative box-border flex flex-col items-center gap-3 pb-10 sm:mx-auto sm:max-w-xl md:max-w-3xl md:py-10 lg:max-w-4xl"
 >
   <h2 class="px-7 text-center text-4xl sm:text-5xl md:text-6xl">
     Effortless Event Management That Flows
@@ -19,13 +20,13 @@ import heroImage from "../../public/event-hero-image.jpg";
 
   <Button class="mt-4">Get Started now</Button>
 
-  <div class="h-16"></div>
-
   <OutlinedImage
-    class="mt-2 min-h-[330px] max-w-[95%] shrink rounded-xl"
+    class="-z-20 mt-8 min-h-[330px] max-w-[95%] shrink rounded-xl"
     src={heroImage}
     alt="Stylized image of a luxurious event"
   />
+
+  <Testimonials />
 </div>
 
 <style>

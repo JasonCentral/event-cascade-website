@@ -6,10 +6,15 @@ export default {
       background: {
         DEFAULT: "rgb(var(--color-background) / <alpha-value>)",
         light: "rgb(var(--color-background-light) / <alpha-value>)",
+        highlight: "rgb(var(--color-highlight) / <alpha-value>)",
       },
       primary: "rgb(var(--color-primary) / <alpha-value>)",
       secondary: "rgb(var(--color-secondary) / <alpha-value>)",
       accent: "rgb(var(--color-accent) / <alpha-value>)",
+      border: "rgb(var(--color-border) / <alpha-value>)",
+    },
+    boxShadow: {
+      inset: "inset 0px 0px 80px 0px theme(colors.background.highlight)",
     },
   },
   plugins: [],

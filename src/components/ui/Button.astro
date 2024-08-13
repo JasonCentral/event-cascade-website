@@ -3,9 +3,9 @@ interface Props {
   class: string;
 }
 
-const { class: className } = Astro.props;
+const { class: className, ...props } = Astro.props;
 ---
 
-<button class:list={["rounded-xl bg-accent p-3", className]}>
+<button class:list={["rounded-xl bg-accent p-3", className]} {...props}>
   <slot />
 </button>
