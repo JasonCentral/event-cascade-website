@@ -1,20 +1,23 @@
 ---
+import SectionHeader from "~/components/ui/SectionHeader.astro";
 import FeatureCard from "~/components/features/FeatureCard.astro";
 
 import features from "~/data/features.json";
+
+const sectionTitle = "Expore Our Services";
+const sectionDescription =
+  "Crafting Unforgettable Moments with Precision, Passion, and a Personal Touch.";
 ---
 
 <section
   id="features"
   class="flex w-full flex-col 2xl:mx-auto 2xl:flex-row 2xl:items-center 2xl:justify-between"
 >
-  <div class="mb-10 shrink-0 text-center 2xl:w-96 2xl:text-left">
-    <h2 class="text-3xl">Explore Our Services</h2>
-    <p class="text-secondary">
-      Crafting Unforgettable Moments with Precision, Passion, and a Personal
-      Touch.
-    </p>
-  </div>
+  <SectionHeader
+    title={sectionTitle}
+    description={sectionDescription}
+    class="2xl:w-96 2xl:text-left"
+  />
 
   <div class="features-grid">
     {

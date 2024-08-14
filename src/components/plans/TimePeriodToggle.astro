@@ -1,0 +1,71 @@
+<div
+  data-time-toggler
+  class="toggle-container flex h-10 w-48 items-center rounded-full border-2 border-primary py-2 text-secondary"
+>
+  <div
+    data-toggle-option="monthly"
+    class="active basis-full cursor-pointer transition-colors"
+  >
+    <p class="text-center">Monthly</p>
+  </div>
+
+  <div
+    data-toggle-option="yearly"
+    class="basis-full cursor-pointer transition-colors"
+  >
+    <p class="text-center">Yearly</p>
+  </div>
+</div>
+
+<style>
+  .toggle-container {
+    position: relative;
+  }
+
+  .toggle-container:before {
+    --pad: 4px;
+
+    content: "";
+    position: absolute;
+    background-color: theme(colors.accent);
+    z-index: -10;
+    border-radius: 9999px;
+    top: var(--pad);
+    left: var(--pad);
+    width: calc(50% - 2 * var(--pad));
+    height: calc(100% - 2 * var(--pad));
+
+    transition: all 200ms ease-in-out;
+  }
+
+  .toggle-container.yearly:before {
+    left: 100%;
+    translate: calc(-100% - var(--pad));
+  }
+
+  .active {
+    color: theme(colors.primary);
+  }
+</style>
+
+<script>
+  const toggler = document.querySelector(
+    "[data-time-toggler]",
+  ) as HTMLDivElement;
+
+  const toggles = toggler.querySelectorAll("[data-toggle-option]");
+
+  toggler?.addEventListener("click", (evt) => {
+    if (!(evt.target instanceof Element)) return;
+    const toggle = evt.target.closest("[data-toggle-option]");
+    if (!(toggle instanceof HTMLElement)) return;
+
+    // Set active class
+    toggles.forEach((el) => el.classList.remove("active"));
+    toggle.classList.add("active");
+
+    const option = toggle.dataset.toggleOption;
+    toggler.classList.remove("monthly", "yearly");
+    toggler.classList.add(option ?? "");
+  });
+</script>

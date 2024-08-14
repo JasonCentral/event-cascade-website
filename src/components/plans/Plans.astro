@@ -1,0 +1,13 @@
+---
+import SectionHeader from "~/components/ui/SectionHeader.astro";
+import TimePeriodToggle from "./TimePeriodToggle.astro";
+
+const sectionTitle = "Pricing Plans";
+const sectionDescription =
+  "Choose the plan that best fits your event planning needs. Whether you're organizing a small gathering or a large corporate event, EventCascade has you covered.";
+---
+
+<section id="pricing" class="mt-16 flex flex-col items-center">
+  <SectionHeader title={sectionTitle} description={sectionDescription} />
+  <TimePeriodToggle />
+</section>
