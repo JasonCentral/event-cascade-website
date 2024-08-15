@@ -1,0 +1,41 @@
+[
+  {
+    "name": "Starter Plan",
+    "monthlyPrice": "29",
+    "yearlyPrice": "299",
+    "target": "Small events, personal celebrations, or small businesses",
+    "features": [
+      "Up to 100 registrations per event",
+      "Basic event website customization",
+      "Standard email support",
+      "Limited analytics and reporting"
+    ]
+  },
+  {
+    "name": "Professional Plan",
+    "monthlyPrice": "99",
+    "yearlyPrice": "999",
+    "target": "Mid-sized events, non-profits, or growing businesses",
+    "features": [
+      "Up to 500 registrations per event",
+      "Enhanced event website customization",
+      "Engagement tools (live polls, surveys, Q&A)",
+      "Priority email and chat support",
+      "Real-time insights and comprehensive analytics"
+    ]
+  },
+  {
+    "name": "Enterprise Plan",
+    "customPricing": true,
+    "monthlyPrice": "Custom pricing",
+    "yearlyPrice": "Custom pricing",
+    "target": "Mid-sized events, non-profits, or growing businesses",
+    "features": [
+      "Unlimited registrations per event",
+      "Full event website customization with custom domains",
+      "Full suite of engagement tools",
+      "24/7 priority support and dedicated account manager",
+      "Advanced analytics with detailed reports and data export"
+    ]
+  }
+]

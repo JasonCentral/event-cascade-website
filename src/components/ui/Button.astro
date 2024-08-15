@@ -1,11 +1,11 @@
 ---
 interface Props {
-  class: string;
+  class?: string;
 }
 
 const { class: className, ...props } = Astro.props;
 ---
 
-<button class:list={["rounded-xl bg-accent p-3", className]} {...props}>
+<button class:list={["bg-accent p-3", className]} {...props}>
   <slot />
 </button>

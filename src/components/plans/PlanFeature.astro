@@ -1,0 +1,15 @@
+---
+import { Image } from "astro:assets";
+import check from "~/icons/feature-check.svg";
+
+interface Props {
+  feature: string;
+}
+
+const { feature } = Astro.props;
+---
+
+<div class="flex flex-row items-start gap-4">
+  <Image class="h-6 w-6" src={check} alt="Checkmark" />
+  <p class="leading-6 text-secondary">{feature}</p>
+</div>
