@@ -1,6 +1,6 @@
 [
   {
-    "name": "Starter Plan",
+    "name": "Starter",
     "monthlyPrice": "29",
     "yearlyPrice": "299",
     "target": "Small events, personal celebrations, or small businesses",
@@ -12,7 +12,7 @@
     ]
   },
   {
-    "name": "Professional Plan",
+    "name": "Professional",
     "monthlyPrice": "99",
     "yearlyPrice": "999",
     "target": "Mid-sized events, non-profits, or growing businesses",
@@ -25,11 +25,11 @@
     ]
   },
   {
-    "name": "Enterprise Plan",
+    "name": "Enterprise",
     "customPricing": true,
     "monthlyPrice": "Custom pricing",
     "yearlyPrice": "Custom pricing",
-    "target": "Mid-sized events, non-profits, or growing businesses",
+    "target": "Large-scale corporate events, conferences, and event agencies",
     "features": [
       "Unlimited registrations per event",
       "Full event website customization with custom domains",

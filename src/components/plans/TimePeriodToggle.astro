@@ -49,6 +49,8 @@
 </style>
 
 <script>
+  import { $intervalStore } from "~/stores/nanostore";
+
   const toggler = document.querySelector(
     "[data-time-toggler]",
   ) as HTMLDivElement;
@@ -67,5 +69,7 @@
     const option = toggle.dataset.toggleOption;
     toggler.classList.remove("monthly", "yearly");
     toggler.classList.add(option ?? "");
+
+    $intervalStore.set(option === "yearly" ? "yearly" : "monthly");
   });
 </script>

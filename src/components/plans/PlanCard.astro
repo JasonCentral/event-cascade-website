@@ -2,6 +2,7 @@
 import Card from "~/components/ui/Card.astro";
 import Button from "~/components/ui/Button.astro";
 import PlanFeature from "./PlanFeature.astro";
+import PlanPrice from "~/components/react/plans/PlanPrice";
 
 interface Props {
   name: string;
@@ -26,28 +27,26 @@ const {
 
 <Card class:list={["flex flex-col rounded-xl p-8", className]}>
   <div>
-    <h3 class="text-lg">{name}</h3>
+    <h3 class="text-xl">{name}</h3>
     <p class="text-sm text-secondary">{target}</p>
   </div>
 
   <div
     class="flex h-full flex-col items-start content-none before:mb-6 before:mt-4 before:block before:w-full before:border-t-2 before:border-background-highlight"
   >
-    <div class=`${customPricing ? "hidden" : ""}`>
-      <p class="text-3xl">${monthlyPrice}</p>
-      <p class="text-sm text-secondary">per month</p>
-    </div>
-
-    <div class=`${!customPricing ? "hidden" : ""}`>
-      <p class="text-3xl">Custom Pricing</p>
-    </div>
+    <PlanPrice
+      monthlyPrice={monthlyPrice}
+      yearlyPrice={yearlyPrice}
+      customPricing={customPricing}
+      client:visible
+    />
 
     <div class="my-7 flex flex-col gap-2">
       {features.map((feature) => <PlanFeature feature={feature} />)}
     </div>
 
     <div class="flex grow flex-col justify-end">
-      <Button class="rounded-full">Choose this Plan</Button>
+      <Button class="rounded-full">Choose this plan</Button>
     </div>
   </div>
 </Card>
