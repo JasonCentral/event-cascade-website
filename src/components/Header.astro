@@ -3,6 +3,7 @@ import Logo from "./Logo.astro";
 import GradientButton from "./ui/GradientButton.astro";
 import { Image } from "astro:assets";
 import hamburgerMenu from "../icons/hamburger-menu.svg";
+import Sidebar from "./Sidebar.astro";
 ---
 
 <header class="flex h-24 w-full flex-row items-center lg:px-2">
@@ -22,12 +23,22 @@ import hamburgerMenu from "../icons/hamburger-menu.svg";
   <div class="flex basis-full flex-row justify-end">
     <GradientButton class="hidden md:block">Try for Free</GradientButton>
 
-    <Image
-      class="cursor-pointer md:hidden"
-      src={hamburgerMenu}
-      alt="Hamburger Menu"
-      height={32}
-      width={32}
-    />
+    <button class="md:hidden" data-hamburger-menu>
+      <Image src={hamburgerMenu} alt="Hamburger Menu" height={32} width={32} />
+    </button>
   </div>
+
+  <Sidebar />
 </header>
+
+<script>
+  const hamburgerMenu = document.querySelector(
+    "[data-hamburger-menu]",
+  ) as HTMLButtonElement;
+
+  const sidebar = document.querySelector("[data-nav-sidebar]") as HTMLElement;
+
+  hamburgerMenu.addEventListener("click", () => {
+    sidebar.classList.add("visible");
+  });
+</script>

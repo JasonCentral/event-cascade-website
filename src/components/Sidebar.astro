@@ -1,0 +1,39 @@
+<aside
+  data-nav-sidebar
+  class="fixed right-0 top-0 z-50 h-full w-48 items-center border-l border-primary/50 bg-background-light px-4"
+>
+  <div class="mt-4 flex flex-row justify-between text-2xl">
+    <h2 class="text-center">Menu</h2>
+    <button data-close-button>&#10006;</button>
+  </div>
+
+  <nav>
+    <ul class="mt-8 flex flex-col gap-4 text-secondary">
+      <li><a href="#features">Features</a></li>
+      <li><a href="#pricing">Pricing</a></li>
+      <li><a href="#reviews">Reviews</a></li>
+    </ul>
+  </nav>
+  <a href="#" class="mt-6 block text-accent">Try for Free</a>
+</aside>
+
+<style>
+  aside {
+    translate: 100%;
+    transition: translate 150ms ease-in-out;
+  }
+  aside.visible {
+    translate: 0%;
+  }
+</style>
+
+<script>
+  const sidebar = document.querySelector("[data-nav-sidebar]") as HTMLElement;
+  const closeButton = sidebar.querySelector(
+    "[data-close-button]",
+  ) as HTMLButtonElement;
+
+  closeButton.addEventListener("click", () =>
+    sidebar.classList.remove("visible"),
+  );
+</script>
