@@ -1,0 +1,31 @@
+---
+import questionData from "~/data/questions.json";
+
+import SectionHeader from "~/components/ui/SectionHeader.astro";
+import Accordion from "~/components/react/Accordion";
+import AnswerCard from "./AnswerCard.astro";
+
+const title = "Frequently Asked Questions";
+---
+
+<section class="2xl:flex 2xl:flex-row">
+  <div class="2xl:basis-[30%]">
+    <SectionHeader
+      title={title}
+      description=""
+      class="2xl:w-96 2xl:text-left"
+    />
+  </div>
+
+  <div class="2xl:basis-[70%]">
+    <div class="mx-auto max-w-3xl">
+      {
+        questionData.map((data) => (
+          <Accordion title={data.question} client:visible>
+            <AnswerCard answer={data.answer} />
+          </Accordion>
+        ))
+      }
+    </div>
+  </div>
+</section>

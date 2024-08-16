@@ -1,0 +1,13 @@
+---
+import Card from "../ui/Card.astro";
+
+interface Props {
+  answer: string;
+}
+
+const { answer } = Astro.props;
+---
+
+<Card class="rounded-md p-4">
+  <p class="text-secondary">{answer}</p>
+</Card>
