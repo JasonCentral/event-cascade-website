@@ -6,6 +6,9 @@ interface Props {
 const { class: className, ...props } = Astro.props;
 ---
 
-<button class:list={["bg-accent p-3", className]} {...props}>
+<button
+  class:list={["text-shadow bg-accent p-3 shadow-background-light", className]}
+  {...props}
+>
   <slot />
 </button>
