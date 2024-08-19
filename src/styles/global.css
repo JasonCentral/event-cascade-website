@@ -11,6 +11,20 @@
     --color-accent: 249 145 59;
     --color-border: 28 36 76;
     --color-highlight: 23 29 63;
+
+    --section-spacing: 2rem;
+  }
+
+  @media only screen and (min-width: 768px) {
+    :root {
+      --section-spacing: 5rem;
+    }
+  }
+
+  @media only screen and (min-width: 1280px) {
+    :root {
+      --section-spacing: 7.5rem;
+    }
   }
 }
 
