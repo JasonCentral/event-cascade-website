@@ -1,0 +1,15 @@
+---
+import facebookIcon from "~/icons/links/facebook.svg";
+import youtubeIcon from "~/icons/links/youtube.svg";
+import instagramIcon from "~/icons/links/instagram.svg";
+import xIcon from "~/icons/links/x.svg";
+
+import LinkIcon from "./LinkIcon.astro";
+---
+
+<div class="flex w-full gap-2 md:justify-center" id="links">
+  <LinkIcon src={facebookIcon} websiteName="Facebook" />
+  <LinkIcon src={youtubeIcon} websiteName="Youtube" />
+  <LinkIcon src={instagramIcon} websiteName="Instagram" />
+  <LinkIcon src={xIcon} websiteName="X" />
+</div>

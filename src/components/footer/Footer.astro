@@ -1,0 +1,33 @@
+---
+import Logo from "~/components/Logo.astro";
+import Subscribe from "~/components/footer/Subscribe.astro";
+import FooterLinks from "~/components/footer/FooterLinks.astro";
+---
+
+<footer class="my-20">
+  <div class="flex flex-col gap-8 md:flex-row xl:justify-around">
+    <div class="pr-4">
+      <div
+        class="relative h-full max-w-[500px] pr-4 after:absolute after:right-0 after:top-[15%] after:h-[70%] after:border-secondary md:after:border-l xl:flex xl:min-w-[650px] xl:max-w-full xl:flex-row xl:items-center xl:justify-start xl:gap-4 xl:after:border-0"
+      >
+        <div class="flex flex-row items-center gap-4">
+          <Logo />
+          <h2
+            class="text-xl font-bold after:border-secondary after:pl-3 xl:after:border-r-2"
+          >
+            EventCascade
+          </h2>
+        </div>
+        <p class="mt-4 text-secondary xl:mt-0 xl:max-w-[400px]">
+          Effortless Events, Unforgettable Impact - Elevate Your Planning with
+          EventCascade.
+        </p>
+      </div>
+    </div>
+
+    <Subscribe class="max-w-[500px] xl:max-w-full" />
+  </div>
+
+  <div class="my-8 border-t border-background-highlight"></div>
+  <FooterLinks />
+</footer>

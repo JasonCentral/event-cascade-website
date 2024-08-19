@@ -1,0 +1,32 @@
+---
+interface Props {
+  class?: string;
+}
+
+const { class: className } = Astro.props;
+---
+
+<div
+  class:list={[
+    "flex flex-col gap-4 2xl:h-12 2xl:flex-row 2xl:items-center 2xl:justify-end",
+    className,
+  ]}
+>
+  <h3
+    class="text-lg font-bold after:border-secondary after:pl-3 xl:text-xl 2xl:after:border-r-2"
+  >
+    Subscribe
+  </h3>
+  <p class="max-w-[500px] text-sm text-secondary md:text-base">
+    Stay ahead of the curve - subscribe for event planning tips and exclusive
+    updates from EventCascade!
+  </p>
+  <div class="flex">
+    <input
+      type="text"
+      placeholder="Email address"
+      class="rounded-l-sm px-2 text-background"
+    />
+    <button class="w-28 rounded-r-sm bg-accent px-4 py-2">Sign Up</button>
+  </div>
+</div>
